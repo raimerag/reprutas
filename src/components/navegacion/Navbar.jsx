@@ -1,4 +1,7 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import "./Navbar.css";
+import { setActiveClass } from "../../utils/setActive";
+
 export const Navbar = () => {
   return (
     <>
@@ -24,23 +27,23 @@ export const Navbar = () => {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <div className="navbar-nav ms-auto ps-2">
-              <Link to="/" className="nav-item nav-link active">
+              <NavLink to="/" className={setActiveClass}>
                 Home <span className="sr-only">(current)</span>
-              </Link>
+              </NavLink>
               {/* <a className="nav-item nav-link" href="#">Features</a>*/}
 
-              <Link to="/GaTos" className="nav-item nav-link">
+              <NavLink to="/GaTos" className={setActiveClass}>
                 Gatos
-              </Link>
+              </NavLink>
 
-              <Link
+              <NavLink
                 to="/formulario"
-                className="nav-item nav-link"
+                className={setActiveClass}
                 tabIndex="-1"
                 aria-disabled="true"
               >
                 formulario
-              </Link>
+              </NavLink>
             </div>
           </div>
         </div>
